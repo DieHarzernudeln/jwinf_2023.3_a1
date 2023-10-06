@@ -46,7 +46,7 @@ fn read_data() -> (i32, i32, Vec<i32>) {
         games.push(line.unwrap().parse::<i32>().unwrap());
     }
 
-    return (bag_count, game_count, games);
+    (bag_count, game_count, games)
 }
 
 fn init_bags(bag_count: i32) -> Vec<String> {
@@ -54,7 +54,7 @@ fn init_bags(bag_count: i32) -> Vec<String> {
     for _ in 0..bag_count {
         bags.push(String::new());
     }
-    return bags;
+    bags
 }
 
 fn append_asym(index: usize, game: i32, bag_count: i32, pbags: &mut Vec<String>) -> usize {
