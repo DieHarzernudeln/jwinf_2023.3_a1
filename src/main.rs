@@ -14,8 +14,8 @@ fn main() {
     for game in games {
         let split = game / bag_count;
         for _ in 0..split {
-            for bag in 0..bag_count as usize {
-                bags[bag].push_str(&game.to_string());
+            for mut bag in bags {
+                bag.push_str(&game.to_string());
             }
         }
 
