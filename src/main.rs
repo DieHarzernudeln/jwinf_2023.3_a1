@@ -3,7 +3,10 @@ use std::io::{BufRead, BufReader};
 fn main() {
     let (bag_count, game_count, games) = read_data();
 
-    println!("bags: {}; with {} games. Games: {:?}", bag_count, game_count, games);
+    println!(
+        "bags: {}; with {} games. Games: {:?}",
+        bag_count, game_count, games
+    );
 
     let mut bags = init_bags(bag_count);
 
