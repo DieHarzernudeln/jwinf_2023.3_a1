@@ -11,17 +11,17 @@ fn main() {
     let mut bags = init_bags(bag_count);
 
     let mut index: usize = 0;
-    for game in games {
+    for (i, game) in games.iter().enumerate() {
         let split = game / bag_count;
         for _ in 0..split {
-            for i in 0..bags.len(){
-                bags[i].push_str(&game.to_string());
+            for bag in &mut bags {
+                bag.push_str(&i.to_string());
             }
         }
 
         for _ in 0..(game - (split * bag_count)) {
             let pbags: &mut Vec<String> = &mut bags;
-            index = append_asym(index, game, bag_count, pbags);
+            index = append_asym(index, i, bag_count, pbags);
         }
     }
 
@@ -57,7 +57,7 @@ fn init_bags(bag_count: i32) -> Vec<String> {
     bags
 }
 
-fn append_asym(index: usize, game: i32, bag_count: i32, pbags: &mut Vec<String>) -> usize {
+fn append_asym(index: usize, game: usize, bag_count: i32, pbags: &mut Vec<String>) -> usize {
     (*pbags)[index].push_str(&game.to_string());
     if index == (bag_count - 1) as usize {
         0
