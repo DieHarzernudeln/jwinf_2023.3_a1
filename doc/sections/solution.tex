@@ -1,0 +1,27 @@
+\section{Lösungsidee}\label{sec:idea}
+\begin{flushleft}
+Die zentrale Herausforderung besteht darin, die Spiele möglichst gleichmäßig auf die Wundertüten zu verteilen
+und dabei die Unterschiede in der Anzahl der Spiele zwischen den Tüten zu minimieren.
+\linebreak
+\\
+Der Verteilalgorithmus arbeitet iterativ, um sicherzustellen, dass die Spiele nach Möglichkeit gleichmäßig auf die Tüten aufgeteilt werden.
+\linebreak
+\\
+
+Zunächst wird für jede Spieleart berechnet, wie viele Spiele theoretisch auf jede Wundertüte kommen sollten, 
+wenn die Verteilung vollständig gleichmäßig wäre. Dabei wird der Divisionsoperator verwendet, um eine erste Schätzung zu erhalten.
+\linebreak
+\\
+Der Rest dieser Division gibt an, wie viele Spiele auf ungleich verteilte Tüten kommen müssen.\\
+
+Um die ungleich verteilten Spiele zu berücksichtigen, wird für jede verbleibende Spieleart iterativ durch die Wundertüten iteriert.\\
+Dabei wird die Spieleart der aktuellen Wundertüte mit den ungleich verteilten Spielen aufgefüllt.\\
+Dies geschieht, indem der Index auf die aktuelle Tüte und die Spieleart verwendet wird.\\
+Der Index wird dabei nach jedem Hinzufügen inkrementiert und bei Erreichen der letzten Tüte auf null zurückgesetzt.\\
+Dies gewährleistet eine gleichmäßige Verteilung der ungleich verteilten Spiele auf die Tüten.
+\linebreak
+\\
+Durch diese iterative Verteilung wird erreicht, dass die Spiele möglichst gleichmäßig auf die Wundertüten aufgeteilt werden, 
+und die Unterschiede in der Anzahl der Spiele zwischen den Tüten minimal sind.\\
+Die Verwendung von Schleifen und mathematischen Operationen ermöglicht eine effiziente Implementierung dieses Verteilalgorithmus in Rust.
+\end{flushleft}

@@ -1,7 +1,15 @@
+use std::env;
 use std::io::{BufRead, BufReader};
 
 fn main() {
-    let (bag_count, game_count, games) = read_data();
+    let args: Vec<String> = env::args().collect();
+    let mut fixed_path = String::new();
+
+    if args.len() >= 2 {
+        fixed_path = args[1].clone();
+    }
+
+    let (bag_count, game_count, games) = read_data(fixed_path);
 
     println!(
         "bags: {}; with {} games. Games: {:?}",
@@ -28,9 +36,15 @@ fn main() {
     println!("{:?}", bags);
 }
 
-fn read_data() -> (i32, i32, Vec<i32>) {
+fn read_data(fixed_path: String) -> (i32, i32, Vec<i32>) {
     let mut input = String::new();
-    std::io::stdin().read_line(&mut input).unwrap();
+
+    if fixed_path.is_empty() {
+        println!("Enter path to file:");
+        std::io::stdin().read_line(&mut input).unwrap();
+    } else {
+        input = fixed_path;
+    }
 
     let file_path = input.trim();
     let file = BufReader::new(std::fs::File::open(file_path).unwrap());

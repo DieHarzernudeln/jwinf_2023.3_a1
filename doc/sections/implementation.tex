@@ -1,0 +1,35 @@
+\section{Umsetzung}
+Die Implementierung erfolgt in Rust, einer Programmiersprache, die für ihre Sicherheit, Geschwindigkeit und Nebenläufigkeit bekannt ist.
+
+\subsection{Einlesen der Eingabedaten}
+Die Funktion \\
+\texttt{read\_data(fixed\_path: String) -> (i32, i32, Vec<i32>)} \\
+ist verantwortlich für das Einlesen der Eingabedaten. \\
+Sie erwartet entweder den Pfad zu einer Datei als Argument oder fordert den Benutzer zur Eingabe auf. \\
+Der Dateiinhalt wird mit Hilfe der \texttt{BufReader}- und \texttt{lines()}-Methoden verarbeitet. \\
+Die Anzahl der Spiele jeder Sorte sowie die Gesamtanzahl der Spiele werden anschließend zurückgegeben.\\
+
+\subsection{Initialisierung der Wundertüten}
+Die Funktion\\
+\texttt{init\_bags(bag\_count: i32) -> Vec<String>}\\
+initialisiert leere Wundertüten als Vektoren von Zeichenketten.\\
+Jede Wundertüte wird dabei als leere Zeichenkette repräsentiert.\\
+
+\subsection{Verteilungsalgorithmus}
+Die Spiele werden gemäß den Vorgaben gleichmäßig auf die Wundertüten verteilt. \\
+In der \texttt{main()}-Funktion wird für jedes Spiel die Anzahl berechnet, die theoretisch auf jede Tüte kommen sollte. \\
+Diese Spiele werden dann gleichmäßig auf die Tüten verteilt, und der Rest wird auf ungleich verteilte Tüten aufgeteilt.\\
+\\
+Die Funktion \\
+\texttt{append\_asym(index: usize, game: usize, bag\_count: i32, pbags: \&mut Vec<String>) -> usize} 
+spielt eine entscheidende Rolle bei der Verteilung der ungleich verteilten Spiele. \\
+Sie fügt der aktuellen Wundertüte das Spiel der aktuellen Sorte hinzu und stellt sicher, 
+dass die ungleich verteilten Spiele möglichst gleichmäßig auf die Tüten verteilt werden. \\
+Der Index wird verwendet, um die Tüten nacheinander zu durchlaufen. \\
+\\
+Die Ergebnisse, bestehend aus den gefüllten Wundertüten, werden am Ende ausgegeben.
+\\
+\\
+Diese Implementierung ermöglicht eine effiziente und korrekte Umsetzung des Verteilalgorithmus in Rust. \\
+Der Fokus liegt darauf, die Spiele möglichst gleichmäßig zu verteilen und \\
+gleichzeitig die Anzahlunterschiede zwischen den Wundertüten zu minimieren.

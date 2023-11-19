@@ -1,0 +1,15 @@
+\babel@toc {ngerman}{}
+\contentsline {section}{\numberline {1}L\IeC {\"o}sungsidee}{2}{}%
+\contentsline {section}{\numberline {2}Umsetzung}{3}{}%
+\contentsline {subsection}{\numberline {2.1}Einlesen der Eingabedaten}{3}{}%
+\contentsline {subsection}{\numberline {2.2}Initialisierung der Wundert\IeC {\"u}ten}{3}{}%
+\contentsline {subsection}{\numberline {2.3}Verteilungsalgorithmus}{3}{}%
+\contentsline {section}{\numberline {3}Beispiele}{4}{}%
+\contentsline {subsection}{\numberline {3.1}Wundert\IeC {\"u}te 1}{4}{}%
+\contentsline {subsection}{\numberline {3.2}Wundert\IeC {\"u}te 2}{4}{}%
+\contentsline {subsection}{\numberline {3.3}Wundert\IeC {\"u}te 3}{4}{}%
+\contentsline {subsection}{\numberline {3.4}Wundert\IeC {\"u}te 4}{4}{}%
+\contentsline {subsection}{\numberline {3.5}Wundert\IeC {\"u}te 5}{4}{}%
+\contentsline {section}{\numberline {4}Quellcode}{5}{}%
+\contentsline {subsection}{\numberline {4.1}main.rs: Hauptprogramm}{5}{}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
